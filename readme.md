@@ -16,6 +16,8 @@ Using `preact-starter` will kickstart your next application! :100: It is designe
 
 ## Install
 
+> :exclamation: **Pro Tip:** Use [Yarn](https://yarnpkg.com/) to install dependencies 3x faster than NPM!
+
 ```sh
 git clone https://github.com/lukeed/preact-starter
 cd preact-starter
@@ -23,8 +25,6 @@ npm install
 npm run build
 npm start
 ```
-
-> :exclamation: **Pro Tip:** Use [Yarn](https://yarnpkg.com/) to install dependencies 3x faster than NPM!
 
 ## Features
 
