@@ -6,6 +6,7 @@ import Layout from './tags/layout';
 import Article from './pages/article';
 import Error404 from './pages/errors/404';
 import Credit from './pages/credit';
+import Map from './pages/map';
 import Blog from './pages/blog';
 
 // track pages on route change
@@ -15,6 +16,7 @@ export default (
 	<Layout>
 		<Router onChange={ onChange }>
 			<Home path="/" />
+			<Map path="/map" />
 			<Blog path="/blog" />
 			<Article path="/blog/:title" />
 			<Credit path="/credit" />
