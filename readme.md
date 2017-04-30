@@ -2,6 +2,10 @@
 
 An example [progressive web app (PWA)](https://developers.google.com/web/progressive-web-apps/) using the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) built with [Preact](https://github.com/developit/preact).
 
+![screen shot](https://cloud.githubusercontent.com/assets/662944/25562231/11e24fc6-2d35-11e7-955d-cbd7d1eec46d.png)
+
+[View it live](https://esri-preact-pwa.now.sh/)
+
 This repository was cloned from  [preact-starter](https://github.com/lukeed/preact-starter) and uses [esri-loader](https://github.com/tomwayson/esri-loader/) to lazy load an ArcGIS web map. See those repositories for more detailed information.
 
 ## Install
