@@ -49,7 +49,7 @@ export default class Map extends Component {
         display: title ? 'block' : 'none'
       }
       // set up the DOM to attach the map to
-      return <div class='map-page'>
+      return <div class='page__map'>
         <div className='map-title' style={titleStyle}><a href={link}>{title}</a></div>
         <div id='map' style={{height: 'calc(100vh - 56px)'}} />
         <div className='loading' style={loadingStyle}>Loading...</div>
