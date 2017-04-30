@@ -1,26 +1,16 @@
-# preact-starter
+# esri-preact-pwa
 
-> Webpack2 boilerplate for building SPA / PWA / offline front-end apps with :atom_symbol: [Preact](https://github.com/developit/preact)
+An example [progressive web app (PWA)](https://developers.google.com/web/progressive-web-apps/) using the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) built with [Preact](https://github.com/developit/preact).
 
-Using `preact-starter` will kickstart your next application! :100: It is designed to fit the "90% use-case" for those who want to build offline-first web apps (see [features](#features) below).
-
-> :triangular_flag_on_post: **Important:** This is meant for _client-side_ apps only; there is **no support** included for universal / server-side rendering. I plan to release my own SSR kit shortly!
-
-**Please note:** Boilerplate _does not_ incorporate the latest ["css-in-js" or "css modules" technique](https://github.com/MicheleBertoli/css-in-js). Instead, the more traditional approach is taken, wherein `styles` and `scripts` are kept separate. That said, you may **certainly and easily** take that route if desired. :white_check_mark:
-
----
-
-<p align="center">:warning: Boilerplate & commands will evolve as my own development process does. :warning:</p>
-
----
+This repository was cloned from  [preact-starter](https://github.com/lukeed/preact-starter) and uses [esri-loader](https://github.com/tomwayson/esri-loader/) to lazy load an ArcGIS web map. See those repositories for more detailed information.
 
 ## Install
 
 > :exclamation: **Pro Tip:** Use [Yarn](https://yarnpkg.com/) to install dependencies 3x faster than NPM!
 
 ```sh
-git clone https://github.com/lukeed/preact-starter
-cd preact-starter
+git clone https://github.com/tomwayson/esri-preact-pwa
+cd tomwayson/esri-preact-pwa
 npm install
 npm run build
 npm start
@@ -28,7 +18,7 @@ npm start
 
 ## Features
 
-* Offline Caching (via `serviceWorker`)
+* Offline Caching (via `serviceWorker`) (*coming soon*)
 * SASS & Autoprefixer
 * Asset Versioning (aka "cache-busting")
 * ES2015 (ES6) and ES2016 (ES7) support
@@ -91,4 +81,4 @@ You can inspect and modify the state of your Preact UI components at runtime usi
 
 ## License
 
-MIT © [Luke Edwards](https://lukeed.com)
+MIT

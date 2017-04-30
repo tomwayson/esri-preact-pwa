@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "preact-starter",
+  "name": "esri-preact-pwa",
   "version": "1.1.1",
   "license": "MIT",
-  "repository": "lukeed/preact-starter",
+  "repository": "tomwayson/esri-preact-pwa",
   "author": {
     "name": "Luke Edwards",
     "email": "luke.edwards05@gmail.com",
