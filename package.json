@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "preact-starter",
+  "name": "esri-preact-pwa",
   "version": "1.1.1",
   "license": "MIT",
-  "repository": "lukeed/preact-starter",
+  "repository": "tomwayson/esri-preact-pwa",
   "author": {
     "name": "Luke Edwards",
     "email": "luke.edwards05@gmail.com",
@@ -15,6 +15,7 @@
     "watch": "webpack-dashboard -- webpack-dev-server --config config/webpack"
   },
   "dependencies": {
+    "esri-loader": "1.0.0",
     "md-colors": "^1.0.0",
     "preact": "^7.2.0",
     "preact-router": "^2.4.1"

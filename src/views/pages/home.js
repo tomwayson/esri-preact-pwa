@@ -7,19 +7,14 @@ export default function (props) {
 		<div className="page page__home">
 			<Card>
 				<h1>Home</h1>
-				<p>This is the home page.</p>
-
-				<p>You should check out:</p>
-				<nav>
-					<Link href="/foo">Foo</Link>
-					<Link href="/foo/bar">Foo/Bar</Link>
-				</nav>
+				<p>An example <a href="https://developers.google.com/web/progressive-web-apps/">progressive web app (PWA)</a> using the <a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> built with <a href="https://github.com/developit/preact">Preact</a>.</p>
 			</Card>
 
 			<Card>
 				<h2>Features:</h2>
 				<ul>
-					<li>Offline Caching (via `serviceWorker`)</li>
+					<li>Lazy load the ArcGIS API using <a href="https://github.com/tomwayson/esri-loader/">esri-loader</a></li>
+					<li>Offline Caching (via `serviceWorker`) (<em>coming soon</em>)</li>
 					<li>SASS & Autoprefixer</li>
 					<li>Asset Versioning (aka "cache-busting")</li>
 					<li>ES2015 (ES6) and ES2016 (ES7) support</li>
@@ -31,17 +26,8 @@ export default function (props) {
 			</Card>
 
 			<Card>
-				<h2>Dev Dashboard</h2>
-				<p>With <a href="https://github.com/FormidableLabs/webpack-dashboard" target="_blank" rel="noopener">`webpack-dashboard`</a>, it's much easier to see what's happening inside your bundles. In addition to de-cluttering your `webpack-dev-server` log, you can quickly make sense of your bundles' `import`s and sizes.</p>
-
-				<img src="/img/dev-dash.jpg" alt="webpack-dashboard" />
-
-				<p>The dashboard is meant to be interactive (scrollable). If you are having issues, please see the author's note:</p>
-				<p>
-					<blockquote>
-						<strong>OSX Terminal.app users:</strong> Make sure that <strong>View → Allow Mouse Reporting</strong> is enabled, otherwise scrolling through logs and modules won't work. If your version of Terminal.app doesn't have this feature, you may want to check out an alternative such as <a href="https://www.iterm2.com/index.html" target="_blank" rel="noopener">iTerm2</a>.
-					</blockquote>
-				</p>
+				<h2>How it works</h2>
+				<p>By lazy-loading the ArcGIS API only on routes where it is needed, such as the <Link href="/map">map route</Link>, other pages of this app are able to yield initial load time that are within the targets of a progressive web app.</p>
 			</Card>
 		</div>
 	);

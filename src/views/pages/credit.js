@@ -2,6 +2,10 @@ import { h } from 'preact';
 import Card from '../tags/card';
 
 const links = [{
+	name: 'tomwayson/esri-loader',
+	desc: 'A tiny library to help load ArcGIS API for JavaScript modules in non-Dojo applications',
+	href: 'https://github.com/tomwayson/esri-loader/'
+}, {
 	name: 'lukeed/preact-starter',
 	desc: 'A Webpack2 starter for building SPA / PWA / offline front-end apps with Preact',
 	href: 'https://github.com/lukeed/preact-starter'
