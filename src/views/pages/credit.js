@@ -26,9 +26,9 @@ const links = [{
 	desc: 'A CLI dashboard for webpack-dev-server',
 	href: 'https://github.com/FormidableLabs/webpack-dashboard'
 }, {
-	name: 'zeit/now',
-	desc: 'Free (OSS) realtime global deployments',
-	href: 'https://zeit.co/now'
+	name: 'Surge',
+	desc: 'Static web publishing for Front-End Developers',
+	href: 'https://surge.sh/'
 }, {
 	name: 'zeit/serve',
 	desc: 'Single-command HTTP directory listing and file serving',
