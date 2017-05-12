@@ -29,6 +29,7 @@ export default function (props) {
 			<Card>
 				<h2>How it works</h2>
 				<p>By lazy-loading the ArcGIS API only on routes where it is needed, such as the <Link href="/map">map route</Link>, other pages of this app are able to yield initial load time that are within the targets of a progressive web app.</p>
+				<p>View the <a href="https://github.com/tomwayson/esri-preact-pwa" target="_blank">source code on GitHub</a>.</p>
 			</Card>
 		</div>
 	);

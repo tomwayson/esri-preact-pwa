@@ -39,7 +39,8 @@ export default function (props) {
 	return (
 		<div className="page page__credit">
 			<Card>
-				<h1>Credits:</h1>
+				<h1>Credits</h1>
+				<p>View the <a href="https://github.com/tomwayson/esri-preact-pwa" target="_blank">source code on GitHub</a>.</p>
 				<p>Resources used within boilerplate:</p>
 			</Card>
 
