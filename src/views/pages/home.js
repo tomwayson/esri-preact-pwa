@@ -14,7 +14,7 @@ export default function (props) {
 			<Card>
 				<h2>Features:</h2>
 				<ul>
-					<li>Lazy load the ArcGIS API using <a href="https://github.com/tomwayson/esri-loader/">esri-loader</a></li>
+					<li>Lazy load the ArcGIS API using <a href="https://github.com/Esri/esri-loader/">esri-loader</a></li>
 					<li>Offline Caching (via `serviceWorker`) (<em>coming soon</em>)</li>
 					<li>SASS & Autoprefixer</li>
 					<li>Asset Versioning (aka "cache-busting")</li>
