@@ -6,7 +6,7 @@ An example [progressive web app (PWA)](https://developers.google.com/web/progres
 
 [View it live](https://esri-preact-pwa.now.sh/)
 
-This repository was cloned from  [preact-starter](https://github.com/lukeed/preact-starter) and uses [esri-loader](https://github.com/tomwayson/esri-loader/) to lazy load an ArcGIS web map. See those repositories for more detailed information.
+This repository was cloned from  [preact-starter](https://github.com/lukeed/preact-starter) and uses [esri-loader](https://github.com/Esri/esri-loader/) to lazy load an ArcGIS web map. See those repositories for more detailed information.
 
 ## Install
 
