@@ -14,6 +14,7 @@
     "predeploy": "npm run build && mv dist/index.html dist/200.html",
     "deploy": "surge ./dist https://esri-preact-pwa.surge.sh",
     "start": "serve dist -s",
+    "start:prod": "NODE_ENV=prod && serve dist -sT",
     "watch": "webpack-dev-server --config config/webpack"
   },
   "dependencies": {
