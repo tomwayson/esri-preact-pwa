@@ -17,7 +17,7 @@
     "watch": "webpack-dev-server --config config/webpack"
   },
   "dependencies": {
-    "esri-loader": "1.0.0",
+    "esri-loader": "2.2.0",
     "ganalytics": "^2.0.1",
     "md-colors": "^1.0.0",
     "preact": "^8.2.5",
