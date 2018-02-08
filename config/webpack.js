@@ -1,12 +1,20 @@
 const { join } = require('path');
 const ExtractText = require('extract-text-webpack-plugin');
+const babelOpts = require('./babel');
+const styles = require('./styles');
 const setup = require('./setup');
 
-const dist = join(__dirname, '../dist');
+const dist = join(__dirname, '..', 'dist');
 const exclude = /(node_modules|bower_components)/;
 
 module.exports = env => {
 	const isProd = env && env.production;
+
+	if (isProd) {
+		babelOpts.presets.push('babili');
+	} else {
+		styles.unshift({ loader:'style-loader' });
+	}
 
 	return {
 		entry: {
@@ -23,22 +31,22 @@ module.exports = env => {
 		},
 		resolve: {
 			alias: {
-				// you may need `preact-compat` instead!
-				'react': 'preact/aliases',
-	 			'react-dom': 'preact/aliases'
+				// Run `npm install preact-compat --save`
+				// 'react': 'preact-compat',
+				// 'react-dom': 'preact-compat'
 			}
 		},
 		module: {
 			rules: [{
 				test: /\.jsx?$/,
 				exclude: exclude,
-				loader: 'babel-loader'
+				loader: {
+					loader: 'babel-loader',
+					options: babelOpts
+				}
 			}, {
 				test: /\.(sass|scss)$/,
-				loader: isProd ? ExtractText.extract({
-					fallbackLoader: 'style-loader',
-					loader: 'css-loader!postcss-loader!sass-loader'
-				}) : 'style-loader!css-loader!postcss-loader!sass-loader'
+				use: isProd ? ExtractText.extract({ fallback:'style-loader', use:styles }) : styles
 			}]
 		},
 		plugins: setup(isProd),
