@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import { isLoaded, bootstrap, dojoRequire } from 'esri-loader';
+import { loadModules } from 'esri-loader';
 
 export default class Map extends Component {
     constructor() {
@@ -8,23 +8,36 @@ export default class Map extends Component {
         this.state = { mapLoaded: false }
     }
     componentDidMount() {
-      if (!isLoaded()) {
-        // no, lazy load it the ArcGIS API before using its classes
-        bootstrap((err) => {
-          if (err) {
-            console.error(err);
-          } else {
-            // once it's loaded, create the map
-            this.createMap();
-          }
-        }, {
-          // use a specific version instead of latest 4.x
-          url: 'https://js.arcgis.com/3.20/'
-        });
-      } else {
-        // ArcGIS API is already loaded, just create the map
-        this.createMap();
-      }
+        // load the Map and MapView modules
+        loadModules(['esri/Map', 'esri/views/MapView'], {
+            // use a specific version instead of latest 4.x
+            url: 'https://js.arcgis.com/4.6/',
+            // also lazy load the CSS for this version
+            css: 'https://js.arcgis.com/4.6/esri/css/view.css'
+        }).then(([Map, MapView]) => {
+            // create a map at a DOM node in this component
+            var map = new Map({
+                basemap: 'streets'
+            })
+            var view = new MapView({
+                container: 'map',
+                map: map,
+                zoom: 4,
+                center: [15, 65] // longitude, latitude
+            }).when(() => {
+                // once the map is loaded
+                // hide the loading indicator
+                // NOTE: this will trigger a rerender
+                this.setState({
+                    mapLoaded: true
+                })
+            })
+        }).catch(err => {
+            this.setState({
+                mapLoaded: true,
+                error: err.message || err
+            })
+        })
     }
 
     render(props, state) {
@@ -37,9 +50,8 @@ export default class Map extends Component {
         </div>
       }
       // otherwise, show map
-      const item = state.item
-      const title = item && item.title
-      const link = item ? `https://www.arcgis.com/home/item.html?id=${item.id}` : 'javascript:void(0)'
+      const title = 'Simple 2D MapView'
+      const link = 'https://developers.arcgis.com/javascript/latest/sample-code/intro-mapview/index.html'
       // show a loading indicator until the map is loaded
       const loadingStyle = {
         display: state.mapLoaded ? 'none' : 'block'
@@ -54,29 +66,5 @@ export default class Map extends Component {
         <div id='map' style={{height: 'calc(100vh - 56px)'}} />
         <div className='loading' style={loadingStyle}>Loading...</div>
       </div>
-    }
-
-     createMap () {
-       // get item id from route params or use default
-       const itemId = /*props.params.itemId ||*/ '8e42e164d4174da09f61fe0d3f206641'
-       // require the map class
-       dojoRequire(['esri/arcgis/utils'], (arcgisUtils) => {
-         // create a map at a DOM node in this component
-         arcgisUtils.createMap(itemId, 'map')
-         .then((response) => {
-           // hide the loading indicator
-           // and show the map title
-           // NOTE: this will trigger a rerender
-           this.setState({
-             mapLoaded: true,
-             item: response.itemInfo.item
-           })
-         }, (err) => {
-           this.setState({
-             mapLoaded: true,
-             error: err.message || err
-           })
-         })
-       })
     }
 }

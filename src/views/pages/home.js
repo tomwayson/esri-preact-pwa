@@ -8,7 +8,7 @@ export default function (props) {
 			<Card>
 				<h1>Home</h1>
 				<p>An example <a href="https://developers.google.com/web/progressive-web-apps/">progressive web app (PWA)</a> using the <a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> built with <a href="https://github.com/developit/preact">Preact</a>.</p>
-				<p>Check out the <Link href="/map">Portland Bike Map</Link>.</p>
+				<p>Check out the <Link href="/map">map</Link>.</p>
 			</Card>
 
 			<Card>
@@ -19,7 +19,6 @@ export default function (props) {
 					<li>SASS & Autoprefixer</li>
 					<li>Asset Versioning (aka "cache-busting")</li>
 					<li>ES2015 (ES6) and ES2016 (ES7) support</li>
-					<li>Webpack Bundle Analysis (via `webpack-dashboard`)</li>
 					<li>Hot Module Replacement (HMR) for all files</li>
 					<li>Preact Developer Tools</li>
 					<li><a href="https://github.com/GoogleChrome/lighthouse" target="_blank" rel="noopener">Lighthouse</a> approved (100/100)</li>
