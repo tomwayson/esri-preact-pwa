@@ -9,12 +9,15 @@ export default class Map extends Component {
     }
     componentDidMount() {
         // load the Map and MapView modules
-        loadModules(['esri/Map', 'esri/views/MapView'], {
+        loadModules(['esri/config', 'esri/Map', 'esri/views/MapView'], {
             // use a specific version instead of latest 4.x
             url: 'https://js.arcgis.com/4.6/',
             // also lazy load the CSS for this version
             css: 'https://js.arcgis.com/4.6/esri/css/view.css'
-        }).then(([Map, MapView]) => {
+        }).then(([esriConfig, Map, MapView]) => {
+            // we're not using secure services
+            // so save some bytes by not loading/using the identity manager
+            esriConfig.request.useIdentity = false;
             // create a map at a DOM node in this component
             var map = new Map({
                 basemap: 'streets'
