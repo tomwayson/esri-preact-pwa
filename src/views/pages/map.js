@@ -8,31 +8,38 @@ export default class Map extends Component {
         this.state = { mapLoaded: false }
     }
     componentDidMount() {
-        // load the Map and MapView modules
-        loadModules(['esri/config', 'esri/Map', 'esri/views/MapView'], {
+        // NOTE: since this is a simple, read-only application
+        // we've included a few non-standard performance optimizations
+        loadModules(['esri/config'], {
             // use a specific version instead of latest 4.x
             url: 'https://js.arcgis.com/4.6/',
             // also lazy load the CSS for this version
+            // NOTE: using view.css instead of main.css to save a few bytes
             css: 'https://js.arcgis.com/4.6/esri/css/view.css'
-        }).then(([esriConfig, Map, MapView]) => {
+        }).then(([esriConfig]) => {
             // we're not using secure services
             // so save some bytes by not loading/using the identity manager
+            // NOTE: this has to be done before even _loading_ other modules
             esriConfig.request.useIdentity = false;
-            // create a map at a DOM node in this component
-            var map = new Map({
-                basemap: 'streets'
-            })
-            var view = new MapView({
-                container: 'map',
-                map: map,
-                zoom: 4,
-                center: [15, 65] // longitude, latitude
-            }).when(() => {
-                // once the map is loaded
-                // hide the loading indicator
-                // NOTE: this will trigger a rerender
-                this.setState({
-                    mapLoaded: true
+            // now we can load the Map and MapView modules
+            loadModules(['esri/Map', 'esri/views/MapView'])
+            .then(([Map, MapView]) => {
+                // create a map at a DOM node in this component
+                var map = new Map({
+                    basemap: 'streets'
+                })
+                var view = new MapView({
+                    container: 'map',
+                    map: map,
+                    zoom: 4,
+                    center: [15, 65] // longitude, latitude
+                }).when(() => {
+                    // once the map is loaded
+                    // hide the loading indicator
+                    // NOTE: this will trigger a rerender
+                    this.setState({
+                        mapLoaded: true
+                    })
                 })
             })
         }).catch(err => {
