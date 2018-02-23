@@ -2,9 +2,13 @@
 
 An example [progressive web app (PWA)](https://developers.google.com/web/progressive-web-apps/) using the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) built with [Preact](https://github.com/developit/preact).
 
+[View it live](https://esri-preact-pwa.surge.sh/map)
+
 ![screen shot](https://user-images.githubusercontent.com/662944/36581131-5169c904-1820-11e8-8f8f-9b0720e8d384.png)
 
-[View it live](https://esri-preact-pwa.surge.sh/map)
+The non-map routes get a near perfect Lighthouse performance score, and even the map route scores in the mid 70s (out of 100), which is outright decent for a web mapping application.
+
+![performance audit results](https://user-images.githubusercontent.com/662944/36581663-ebf9d8c2-1822-11e8-9bd7-68f71d4be1dc.png)
 
 This repository was cloned from  [preact-starter](https://github.com/lukeed/preact-starter) and uses [esri-loader](https://github.com/Esri/esri-loader/) to lazy load an ArcGIS web map. See those repositories for more detailed information.
 
