@@ -15,7 +15,7 @@ export default function (props) {
 				<h2>Features:</h2>
 				<ul>
 					<li>Lazy load the ArcGIS API using <a href="https://github.com/Esri/esri-loader/">esri-loader</a></li>
-					<li>Offline Caching (via `serviceWorker`) (<em>coming soon</em>)</li>
+					<li>Offline Caching (via `serviceWorker`)</li>
 					<li>SASS & Autoprefixer</li>
 					<li>Asset Versioning (aka "cache-busting")</li>
 					<li>ES2015 (ES6) and ES2016 (ES7) support</li>

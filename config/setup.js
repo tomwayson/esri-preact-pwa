@@ -28,11 +28,25 @@ module.exports = isProd => {
 			new webpack.optimize.UglifyJsPlugin(uglify),
 			new ExtractText('styles.[hash].css'),
 			new SWPrecache({
+				cacheId: 'esri-preact-pwa',
 				minify: true,
 				filename: 'sw.js',
 				dontCacheBustUrlsMatching: /./,
 				navigateFallback: 'index.html',
-				staticFileGlobsIgnorePatterns: [/\.map$/]
+				staticFileGlobsIgnorePatterns: [/\.map$/],
+				runtimeCaching: [
+					{
+						// JSAPI scripts
+						urlPattern: new RegExp("https://js.arcgis.com"),
+						handler: "fastest"
+					},
+					{
+						// urlPattern: new RegExp("https://services.arcgisonline.com/ArcGIS/rest/services/"),
+						// basemap tiles
+						urlPattern: /server.arcgisonline.com\/ArcGIS\/rest\/services\/.+\/tile/,
+						handler: "fastest"
+					}
+				]
 			})
 		);
 	} else {
