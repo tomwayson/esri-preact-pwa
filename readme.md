@@ -2,9 +2,9 @@
 
 An example [progressive web app (PWA)](https://developers.google.com/web/progressive-web-apps/) using the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) built with [Preact](https://github.com/developit/preact).
 
-![screen shot](https://cloud.githubusercontent.com/assets/662944/25562231/11e24fc6-2d35-11e7-955d-cbd7d1eec46d.png)
+![screen shot](https://user-images.githubusercontent.com/662944/36581131-5169c904-1820-11e8-8f8f-9b0720e8d384.png)
 
-[View it live](https://esri-preact-pwa.now.sh/)
+[View it live](https://esri-preact-pwa.surge.sh/map)
 
 This repository was cloned from  [preact-starter](https://github.com/lukeed/preact-starter) and uses [esri-loader](https://github.com/Esri/esri-loader/) to lazy load an ArcGIS web map. See those repositories for more detailed information.
 
@@ -22,7 +22,7 @@ npm start
 
 ## Features
 
-* Offline Caching (via `serviceWorker`) (*coming soon*)
+* Offline Caching (via `serviceWorker`)
 * SASS & Autoprefixer
 * Asset Versioning (aka "cache-busting")
 * ES2015 (ES6) and ES2016 (ES7) support
