@@ -5,6 +5,7 @@ const SWPrecache = require('sw-precache-webpack-plugin');
 const Clean = require('clean-webpack-plugin');
 const Copy = require('copy-webpack-plugin');
 const HTML = require('html-webpack-plugin');
+const ArcGISPlugin = require("@arcgis/webpack-plugin");
 const uglify = require('./uglify');
 
 const root = join(__dirname, '..');
@@ -18,7 +19,8 @@ module.exports = isProd => {
 		new HTML({ template: 'src/index.html' }),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development')
-		})
+		}),
+		new ArcGISPlugin()
 	];
 
 	if (isProd) {

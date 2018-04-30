@@ -58,6 +58,10 @@ module.exports = env => {
 			compress: isProd,
 			inline: !isProd,
 			hot: !isProd
+		},
+		node: {
+			process: false,
+			global: false
 		}
 	};
 };

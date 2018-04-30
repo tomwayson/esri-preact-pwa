@@ -4,6 +4,7 @@ module.exports = {
 		'stage-2'
 	],
 	plugins: [
-		['transform-react-jsx', { pragma:'h' }]
+		['transform-react-jsx', { pragma:'h' }],
+		'transform-es2015-modules-amd'
 	]
 };
